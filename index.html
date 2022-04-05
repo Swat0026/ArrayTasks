@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main" style="margin-left: 30px; margin-top: 30px">
+      <label>Company</label>
+      <input
+        style="margin-left: 40px; height: 20px"
+        type="text"
+        id="compname"
+      />
+      <br />
+      <label>Model</label>
+      <input
+        style="margin-left: 58px; margin-top: 8px; height: 20px"
+        type="text"
+        id="model"
+      />
+      <br />
+      <label>Memory</label>
+      <input
+        style="margin-left: 45px; margin-top: 8px; height: 20px"
+        type="number"
+        id="memory"
+      /> 
+      <br>
+      <label>Price</label>
+      <input
+        style="margin-left: 65px; margin-top: 8px; height: 20px"
+        type="number"
+        id="price"
+      /> <br>
+      <button
+        id="btn"
+        type="submit"
+        style="
+          margin-top: 20px;
+          margin-bottom: 30px;
+          margin-left: 150px;
+        "
+        onclick="Add()"
+      >
+        Add
+      </button>
+
+      <div class="search" style=" margin-top: 8px;">
+        <select name="category" id="category">
+            <option value="Options">-Select Field-</option>
+            <option value="Options">Company</option>
+            <option value="Options">Model</option>
+            <option value="Options">Memory</option>
+            <option value="Options">Price</option>
+        </select>
+        
+        
+        
+        
+        
+        <input type="text" class="search-input" >
+        <button style="margin-top: 8px;" class="btn" type="submit">Search</button>
+
+
+
+    </div> 
+    
+
+ 
+
+      
+      <p id="output"></p>
+    </div>
+    <script>
+      var compcart = [];
+      function Add() {
+        var componame = document.getElementById("compname").value;
+        var compmodel = document.getElementById("model").value;
+        var compmemory = parseInt(document.getElementById("memory").value);
+        var compprice = parseInt(document.getElementById("price").value);
+
+        var cart = {};
+        cart.itemname = document.getElementById("compname").value;
+        cart.itemmodel = document.getElementById("model").value;
+        cart.itemmemory = document.getElementById("memory").value;
+        cart.itemprice = document.getElementById("price").value;
+        compcart.push(cart);
+        console.log(compcart);
+
+        var html =
+          "<table><tr><td>Company</td><td>Model</td><td>Memory</td><td>Price</td></tr>";
+        var html1 = "</table>";
+        compcart.forEach((element) => {
+          html +=
+            "<tr><td>" +
+            element.itemname +
+            "</td><td >" +
+            element.itemmodel +
+            "</td><td>" +
+            element.itemmemory +
+            "</td><td>" +
+            element.itemprice +
+            "</td></tr>";
+        });
+        document.getElementById("output").innerHTML = html + html1;
+      }
+    </script>
+  </body>
+</html>
