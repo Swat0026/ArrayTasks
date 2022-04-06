@@ -46,19 +46,21 @@ function Add() {
         '</td><td><input type="checkbox" class="cbox" value="" onchange="check(${i})"></td></tr>';
         
     });document.getElementById("goods").innerHTML = fields;
+    document.getElementById("goods1").innerHTML = fields;
     document.getElementById("output").innerHTML = html + row + html1;
   }
 }
 
 function display() {
   var row = "";
-  compcart.forEach((element) => {
+  compcart.forEach((element,i) => {
     row += `  <tr>
                 <td>${element.itemname}</td>
                 <td>${element.itemmodel}</td>
                 <td>${element.itemmemory}</td>
                 <td>${element.itemprice}</td>
                 <td>${element.itemquant}</td>
+                <td><input type="checkbox" class="cbox"value="${i}"></td>
             </tr>`;
   });
   document.getElementById("output").innerHTML = html + row + html1;
@@ -207,4 +209,17 @@ function genbill() {
             <td></td>
             <td>${totprice}</td>
             </tr></table>`;
+}
+
+function updateitems(){
+    var i = document.getElementById("goods1").value;
+    console.log(i);
+    var quantity1 = document.getElementById("goodsquantity1").value;
+    console.log(quantity1)
+    var cart = compcart[i];
+    console.log(cart);
+    cart.itemquant = quantity1;
+    console.log(cart.itemquant)
+    display()
+
 }
