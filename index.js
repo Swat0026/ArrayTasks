@@ -1,6 +1,6 @@
 var compcart = [];
 var html =
-  "<table><tr><td>Company</td><td>Model</td><td>Memory</td><td>Price</td><td>Quantity</td></tr>";
+  "<table><tr><td>Company</td><td>Model</td><td>Memory</td><td>Price</td><td>Quantity</td><td>Action</td></tr>";
 var html1 = "</table>";
 function Add() {
   var componame = document.getElementById("compname").value;
@@ -43,7 +43,8 @@ function Add() {
         element.itemprice +
         "</td><td>" +
         element.itemquant +
-        "</td></tr>";
+        '</td><td><input type="checkbox" class="cbox" value="" onchange="check(${i})"></td></tr>';
+        
     });document.getElementById("goods").innerHTML = fields;
     document.getElementById("output").innerHTML = html + row + html1;
   }
