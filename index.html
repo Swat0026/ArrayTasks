@@ -33,11 +33,17 @@
       <br />
       <label>Price</label>
       <input required
-        style="margin-left: 65px; margin-top: 8px; height: 20px"
+        style="margin-left: 66px; margin-top: 8px; height: 20px"
         type="number"
         id="price"
       />
       <br />
+      <label>Quantity</label>
+      <input required
+        style="margin-left: 43px; margin-top: 8px; height: 20px"
+        type="number"
+        id="quantity"
+      /> <br>
       <button
         id="btn"
         type="submit"
@@ -79,6 +85,16 @@
           <option value="itemmemory">Memory</option>
           <option value="itemprice">Price</option>
         </select>
+        <br>
+        <br>
+        <br>
+        <select name="" id="goods">
+          <option value="">-Select Product-</option>
+        </select>
+        <input type="number" id="goodsquantity" placeholder="quantity"  >
+        <button onclick="addgoods()">Add</button>
+        <button onclick="genbill()" id="genbill">Generate Bill</button>
+        <p id="Bill"></p>
     
         
         
