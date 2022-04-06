@@ -27,86 +27,66 @@
         style="margin-left: 45px; margin-top: 8px; height: 20px"
         type="number"
         id="memory"
-      /> 
-      <br>
+      />
+      <br />
       <label>Price</label>
       <input
         style="margin-left: 65px; margin-top: 8px; height: 20px"
         type="number"
         id="price"
-      /> <br>
+      />
+      <br />
       <button
         id="btn"
         type="submit"
-        style="
-          margin-top: 20px;
-          margin-bottom: 30px;
-          margin-left: 150px;
-        "
+        style="margin-top: 20px; margin-bottom: 30px; margin-left: 150px"
         onclick="Add()"
       >
         Add
       </button>
 
-      <div class="search" style=" margin-top: 8px;">
-        <select name="category" id="category">
-            <option value="Options">-Select Field-</option>
-            <option value="Options">Company</option>
-            <option value="Options">Model</option>
-            <option value="Options">Memory</option>
-            <option value="Options">Price</option>
+      <div class="search" style="margin-top: 8px">
+        <select name="" id="category">
+          <option value="">-Select Field-</option>
+          <option value="itemname">Company</option>
+          <option value="itemmodel">Model</option>
+          <option value="itemmemory">Memory</option>
+          <option value="itemprice">Price</option>
         </select>
-        
-        
-        
-        
-        
-        <input type="text" class="search-input" >
-        <button style="margin-top: 8px;" class="btn" type="submit">Search</button>
 
-
-
-    </div> 
+        <input type="text" class="search-input" id="ip-box" />
+        <button
+          onclick="search()"
+          style="margin-top: 8px"
+          class="btn"
+          type="submit"
+        >
+          Search
+        </button>
+        <br>
+        <br>
+        <select id="sort" onchange="sorting()">
+          <option value="">-Sort-</option>
+          <option value="asc">Ascending</option>
+          <option value="dsc">Descending</option>
+        </select>
+        <select  id="sortby">
+          <option value="">-Sort by-</option>
+          <option value="itemname">Company</option>
+          <option value="itemmodel">Model</option>
+          <option value="itemmemory">Memory</option>
+          <option value="itemprice">Price</option>
+        </select>
     
+        
+        
 
- 
+      </div>
 
       
+
       <p id="output"></p>
     </div>
-    <script>
-      var compcart = [];
-      function Add() {
-        var componame = document.getElementById("compname").value;
-        var compmodel = document.getElementById("model").value;
-        var compmemory = parseInt(document.getElementById("memory").value);
-        var compprice = parseInt(document.getElementById("price").value);
-
-        var cart = {};
-        cart.itemname = document.getElementById("compname").value;
-        cart.itemmodel = document.getElementById("model").value;
-        cart.itemmemory = document.getElementById("memory").value;
-        cart.itemprice = document.getElementById("price").value;
-        compcart.push(cart);
-        console.log(compcart);
-
-        var html =
-          "<table><tr><td>Company</td><td>Model</td><td>Memory</td><td>Price</td></tr>";
-        var html1 = "</table>";
-        compcart.forEach((element) => {
-          html +=
-            "<tr><td>" +
-            element.itemname +
-            "</td><td >" +
-            element.itemmodel +
-            "</td><td>" +
-            element.itemmemory +
-            "</td><td>" +
-            element.itemprice +
-            "</td></tr>";
-        });
-        document.getElementById("output").innerHTML = html + html1;
-      }
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>
