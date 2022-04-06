@@ -8,29 +8,31 @@
   </head>
   <body>
     <div class="main" style="margin-left: 30px; margin-top: 30px">
-      <label>Company</label>
-      <input
+      <p id="Validation" style="color: red;"></p>
+      <label for="company" >Company</label>
+      <input required
         style="margin-left: 40px; height: 20px"
         type="text"
         id="compname"
+        name="company"
       />
       <br />
       <label>Model</label>
-      <input
+      <input required
         style="margin-left: 58px; margin-top: 8px; height: 20px"
         type="text"
         id="model"
       />
       <br />
       <label>Memory</label>
-      <input
+      <input required
         style="margin-left: 45px; margin-top: 8px; height: 20px"
         type="number"
         id="memory"
       />
       <br />
       <label>Price</label>
-      <input
+      <input required
         style="margin-left: 65px; margin-top: 8px; height: 20px"
         type="number"
         id="price"

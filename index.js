@@ -8,8 +8,11 @@
         var compmodel = document.getElementById("model").value;
         var compmemory = parseInt(document.getElementById("memory").value);
         var compprice = parseInt(document.getElementById("price").value);
-
-        var cart = {};
+        if(componame=="" || compmodel=="" || compmemory=="" || compprice==""  ){
+            document.getElementById("Validation").innerHTML="***PLEASE FILL THE REQUIRED FIELDS***";
+        }else{
+            document.getElementById("Validation").innerHTML="";
+            var cart = {};
         cart.itemname = document.getElementById("compname").value;
         cart.itemmodel = document.getElementById("model").value;
         cart.itemmemory = document.getElementById("memory").value;
@@ -33,6 +36,10 @@
         });
         document.getElementById("output").innerHTML = html +row+ html1;
       };
+
+    }
+
+        
 function display() {
     
   var row = "";
