@@ -213,13 +213,9 @@ function genbill() {
 
 function updateitems(){
     var i = document.getElementById("goods1").value;
-    console.log(i);
     var quantity1 = document.getElementById("goodsquantity1").value;
-    console.log(quantity1)
     var cart = compcart[i];
-    console.log(cart);
     cart.itemquant = quantity1;
-    console.log(cart.itemquant)
     display()
 
 }
