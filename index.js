@@ -1,6 +1,6 @@
 var compcart = [];
 var html =
-  "<table><tr><td>Company</td><td>Model</td><td>Memory</td><td>Price</td><td>Quantity</td><td>Action</td></tr>";
+  "<table><tr><th>Company</th><th>Model</th><th>Memory</th><th>Price</th><th>Quantity</th><th>Action</th></tr>";
 var html1 = "</table>";
 function Add() {
   var componame = document.getElementById("compname").value;
@@ -251,8 +251,24 @@ function ratingitems (){
     <tr>`
   });  document.getElementById("ratetab").innerHTML=ratetable+row+"</table>";
 
+}
+function searchprice(){
+  var minimum=document.getElementById("mn").value;
+  var maximum=document.getElementById("mx").value;
+  var row="";
+  compcart.forEach((element,i) => {
+    if(element.itemprice >=minimum && element.itemprice<=maximum){
+      row=row+`<tr>
+      <td>${element.itemname}</td>
+      <td>${element.itemmodel}</td>
+      <td>${element.itemmemory}</td>
+      <td>${element.itemprice}</td>
+      <td>${element.itemquant}</td>
+      <td><input type="checkbox" class="cbox" value="${i}"</td>
 
-
-
-
+           <tr>`
+    }else{
+      display();
+    }
+  }); document.getElementById("output").innerHTML=html+row+html1;
 }
