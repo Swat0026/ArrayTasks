@@ -47,6 +47,7 @@ function Add() {
         
     });document.getElementById("goods").innerHTML = fields;
     document.getElementById("goods1").innerHTML = fields;
+    document.getElementById("rategoods").innerHTML=fields;
     document.getElementById("output").innerHTML = html + row + html1;
   }
 }
@@ -217,5 +218,41 @@ function updateitems(){
     var cart = compcart[i];
     cart.itemquant = quantity1;
     display()
+
+}
+var rateprod=[];
+var ratetable=`<table>
+<tr><th>Company</th>
+    <th>Model</th>
+    <th>Memory</th>
+    <th>Price</th>
+    <th>Rating</th>
+</tr>`
+function ratingitems (){
+  var r =document.getElementById("rategoods").value;
+  var rate1=document.getElementById("rateinnum").value;
+  var rate2=compcart[r];
+  var r={
+    "compname": `${rate2.itemname}`,
+    "model": `${rate2.itemmodel}`,
+    "memory": `${rate2.itemmemory}`,
+    "price":`${rate2.itemprice}`,
+    "Rating":`${rate1}`,
+  }
+  rateprod.push(r);
+  var row="";
+  rateprod.forEach(element=>{
+    row+= `<tr>
+    <td>${element.compname}</td>
+    <td>${element.model}</td>
+    <td>${element.memory}</td>
+    <td>${element.price}</td>
+    <td>${element.Rating}</td>
+    <tr>`
+  });  document.getElementById("ratetab").innerHTML=ratetable+row+"</table>";
+
+
+
+
 
 }
