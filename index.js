@@ -7,7 +7,7 @@ function Add() {
   var compmodel = document.getElementById("model").value;
   var compmemory = parseInt(document.getElementById("memory").value);
   var compprice = parseInt(document.getElementById("price").value);
-  var compquant = document.getElementById("quantity").value;
+  var compquant = parseInt( document.getElementById("quantity").value);
   if (
     componame == "" ||
     compmodel == "" ||
@@ -181,7 +181,7 @@ function addgoods() {
   
   var quantity = document.getElementById("goodsquantity").value;
   var cart = compcart[i];
-  var sum = (Number(cart.itemprice)) * quantity;
+  var sum = (cart.itemprice) * quantity;
   var cart = {
     "Description": `${cart.itemname} ${cart.itemmodel}`,
     "quantity": `${quantity}`,
